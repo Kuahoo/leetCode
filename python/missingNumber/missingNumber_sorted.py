@@ -4,16 +4,16 @@
 # return the only number in the range that is missing from the array.
 
 class Solution(object):
-    def missingNumber(self, nums: list[int]) -> int:
+    def missingNumber(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        for num in range(0, len(nums)+1):
-            if num in nums:
-                pass
-            else:
+        nums.sort()
+        for num in range(0, len(nums)):
+            if num != nums[num]:
                 return num
+        return len(nums)
 
 
 def main():
